@@ -4,9 +4,6 @@ Bug:
  
 2 Unhandle : Error . it is checked Error 
  
-
-
-
  -->
 
  <?php
@@ -15,18 +12,21 @@ Bug:
  $num=10;
  $deno=0;
 
-
-
 //  echo $num/$deno;
 
+class myException extends Exception{
+    function message(){
+        echo "Non zero Value Required";
+    }
+}
  try{
     if($deno== 0){
-        throw new Exception("Non Zero Value Required <br>");
+        throw new myException();
     }else{
         echo $num/$deno;
     }
  }
- catch(Exception $obj){
+ catch(myException $obj){
     echo"<p> fatal error</p>";
     echo $obj-> getMessage();
     echo " <b>on Line </b>";
