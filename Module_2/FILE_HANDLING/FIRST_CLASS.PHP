@@ -14,5 +14,15 @@ syntax:
         6. "a+" for read and write its pointer position at last . 
         7. "x" creation and if file exists than it occurs an error.
         8. "x+" reading and writing if file exists than it occurs an error.
+        9. fclose()
+        10. file_size()
+        11. fread()
+        12. fwrite()
+        13. fgets() it read one line at  time '
+        14  feof() file end of . 
+        15. fgetc () for character only 
+        16. file_exists()
+        17. unlink() - to deleting the file 
+        18. copy (source file , destination)
 
  -->

@@ -46,28 +46,29 @@ if(isset($_POST['display']))
 		<th>User_Email</th>
 		<th>Contact No</th>
 		<th>Address</th>
-		<th>DateOfBirth</th></tr>";
+		<th>DateOfBirth</th>
+		<th colspan='2'>Operation</th></tr>";
 
 		while($new_data = mysqli_fetch_assoc($data))
 		{
-			// echo"<form action= data.php method= post>";
+			echo"<form action= data.php method= post>";
 			echo"<tr>";
-			// echo"<td><input type= text name=new_id value=$new_data[id] readyonly> </td>";
-			// echo"<td><input type= text name=new_uname value=$new_data[uname]> </td>";
-			// echo"<td><input type= text name= new_eml value=$new_data[emal]> </td>";
-			// echo"<td><input type= text name= new_mob value=$new_data[mob] > </td>";
-			// echo"<td><input type= text name=new_addr  value=$new_data[addr] > </td>";
-			// echo"<td><input type= text name=new_dob value=$new_data[dob] > </td>";
-			echo "<td>".$new_data['id']."</td>";
-			echo "<td>".$new_data['uname']."</td>";
-			echo "<td>".$new_data['emal']."</td>";
-			echo "<td>".$new_data['mob']."</td>";
-			echo "<td>".$new_data['addr']."</td>";
-			echo "<td>".$new_data['dob']."</td>";
-			// echo"<td><input type = submit , name = update value = update></td>";
-			// echo"<td><input type = submit , name = delete value = delete></td>";
+			echo"<td><input type= text name=new_id value=$new_data[id] readyonly> </td>";
+			echo"<td><input type= text name=new_uname value=$new_data[uname]> </td>";
+			echo"<td><input type= text name= new_eml value=$new_data[emal]> </td>";
+			echo"<td><input type= text name= new_mob value=$new_data[mob] > </td>";
+			echo"<td><input type= text name=new_addr  value=$new_data[addr] > </td>";
+			echo"<td><input type= text name=new_dob value=$new_data[dob] > </td>";
+			// echo "<td>".$new_data['id']."</td>";
+			// echo "<td>".$new_data['uname']."</td>";
+			// echo "<td>".$new_data['emal']."</td>";
+			// echo "<td>".$new_data['mob']."</td>";
+			// echo "<td>".$new_data['addr']."</td>";
+			// echo "<td>".$new_data['dob']."</td>";
+			echo"<td><input type = submit , name = update, value = update></td>";
+			echo"<td><input type = submit , name = delete, value = delete></td>";
 			echo "</tr>";
-			// echo"</form>";
+			echo"</form>";
 
 
 		}
@@ -99,8 +100,9 @@ if(isset($_post['update'])){
 if(isset($_POST['delete'])){
 	$id = $_POST['new_id'];
 	$delete_query="DELETE FROM regis WHERE id='$id'";
-	if(mysqli_connect($connection_details,$delete_query)){
+	if(mysqli_query($connection_details,$delete_query)){
 		echo"1 record deleted";
+		header("refresh:0,url=data.php");
 	}else{
 		echo"Unable to Delete the data. ";
 	}

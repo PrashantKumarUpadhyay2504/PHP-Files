@@ -35,6 +35,6 @@ $arr_data[2]=$num3;
 $arr_data[3]=$num4;
 
 if($num1>$num2&&$num1>$num2&&$num1>$num3&&$num1>$num4){
-    echo 
+    
 }
 ?>

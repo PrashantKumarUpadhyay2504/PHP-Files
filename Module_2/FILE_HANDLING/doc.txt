@@ -1,0 +1,3 @@
+Welcome to learn file handling in php
+class Btech class
+Section G
