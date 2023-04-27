@@ -51,7 +51,7 @@ if(isset($_POST['display']))
 
 		while($new_data = mysqli_fetch_assoc($data))
 		{
-			echo"<form action='upd.php' method=post>";
+			echo"<form action='insert.php' method=post>";
 			echo"<tr>";
 			echo"<td><input type= text name=new_id value=$new_data[id] readyonly> </td>";
 			echo"<td><input type= text name=new_uname value=$new_data[uname]> </td>";
@@ -81,23 +81,23 @@ if(isset($_POST['display']))
 	}
 }
 
-if(isset($_post['updt'])){
- echo "5";
-	// $id = $_POST['new_id'];
-	// $uname = $_POST['new_uname'];
-	// $eml = $_POST['new_eml'];
-	// $mob = $_POST['new_mob'];
-	// $addr= $_POST['new_addr'];
-	// $dob = $_POST['new_dob'];
-	// echo $dob;
+if(isset($_POST['updt'])){
+ 
+	$id = $_POST['new_id'];
+	$uname = $_POST['new_uname'];
+	$eml = $_POST['new_eml'];
+	$mob = $_POST['new_mob'];
+	$addr= $_POST['new_addr'];
+	$dob = $_POST['new_dob'];
+	echo $dob;
 
-	// $update_query="UPDATE regis SET new_uname='$uname' ,_new_emal='$eml',new_mob='$mob' , new_addr='$addr', new_dob=$dob where new_id='$id'";
+	$update_query="UPDATE regis SET uname='$uname' ,emal='$eml',mob='$mob' , addr='$addr', dob=$dob where id='$id'";
 
-	// if(mysqli_query($connection_details,$update_query)){
-	// 	echo"1 record update succesfully";
-	// }else{
-	// 	echo"Unable to update record";
-	// }
+	if(mysqli_query($connection_details,$update_query)){
+		echo"1 record update succesfully";
+	}else{
+		echo"Unable to update record";
+	}
 }
 
 if(isset($_POST['delete'])){

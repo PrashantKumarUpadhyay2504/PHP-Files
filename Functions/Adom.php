@@ -1,4 +1,5 @@
 <?php 
+declare(strict_types=1);
 
 function adomcheck(int $num){
     $real_num=$num;
@@ -7,10 +8,15 @@ function adomcheck(int $num){
     $real_num=sqrt("$real_num");
     $real_num=strrev("$real_num");
     if($real_num==$num){
-        echo"yes";
+        print_r("yes");
     }else{
-        echo"No";
+        print_r("No");
     }
 }
-adomcheck(12);
+echo"<input type=text name= num value= num >";
+echo"<input type=submit name= adom value= admon >";
+$num=$_POST['num'];
+if(isset($_POST['adom'])){
+    adomcheck(int num);
+}
 ?>
