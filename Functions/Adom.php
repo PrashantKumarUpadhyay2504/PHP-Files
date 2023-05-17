@@ -17,6 +17,6 @@ echo"<input type=text name= num value= num >";
 echo"<input type=submit name= adom value= admon >";
 $num=$_POST['num'];
 if(isset($_POST['adom'])){
-    adomcheck(int num);
+    adomcheck(num);
 }
 ?>

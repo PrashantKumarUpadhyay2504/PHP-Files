@@ -18,13 +18,14 @@
 // fclose($file_handle);
 
 // fget () working : 
-// $file_handle=fopen("doc.txt", "r");
-// echo fgets($file_handle);
-// echo fgets($file_handle);
-// echo fgets($file_handle);
-// fclose($file_handle);
+$file_handle=fopen("doc.txt", "r");
+echo fgets($file_handle);
+echo fgets($file_handle);
+echo fgets($file_handle);
+fclose($file_handle);
 
 // // feof()
+
 // $file_handle=fopen("doc.txt", "r");
 // while(!feof($file_handle)){
 //     echo fgets($file_handle);
@@ -32,15 +33,15 @@
 // }
 
 
-// 
-$file_handle=fopen("doc.txt", "r");
-while(!feof($file_handle)){
-    $data = fgetc($file_handle);
-    if($data ==='\n'){
-        $data="<br>";
-    }
-    echo $data;
-}
+// // 
+// $file_handle=fopen("doc.txt", "r");
+// while(!feof($file_handle)){
+//     $data = fgetc($file_handle);
+//     if($data ==='\n'){
+//         $data="<br>";
+//     }
+//     echo $data;
+// }
 
 
 

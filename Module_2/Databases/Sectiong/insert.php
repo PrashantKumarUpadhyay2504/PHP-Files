@@ -17,8 +17,8 @@ if(isset($_POST['save']))
 {
 $uname = $_POST['uname'];
 $eml = $_POST['emal'];
-$mob = $_POST['contct'];
-$address = $_POST['addr'];
+$mob = $_POST['mob'];
+$address = $_POST['addr']; 
 $dob = $_POST['dob'];
 
 $insert_query = "INSERT INTO regis(uname,emal,mob,addr,dob) VALUES('$uname','$eml','$mob','$address','$dob')";
@@ -65,8 +65,8 @@ if(isset($_POST['display']))
 			// echo "<td>".$new_data['mob']."</td>";
 			// echo "<td>".$new_data['addr']."</td>";
 			// echo "<td>".$new_data['dob']."</td>";
-			//echo"<td><input type=submit  name='update' value = update></td>";
-			//echo"<td><input type = submit  name = delete value = delete></td>";
+			// echo"<td><input type=submit  name='update' value = update></td>";
+			echo"<td><input type = submit  name = delete value = delete></td>";
 			echo "<td><input type=submit name=updt value=update ></td>";
 			echo "</tr>";
 			echo"</form>";
@@ -89,9 +89,7 @@ if(isset($_POST['updt'])){
 	$mob = $_POST['new_mob'];
 	$addr= $_POST['new_addr'];
 	$dob = $_POST['new_dob'];
-	echo $dob;
-
-	$update_query="UPDATE regis SET uname='$uname' ,emal='$eml',mob='$mob' , addr='$addr', dob=$dob where id='$id'";
+	$update_query="UPDATE FROM regis SET uname='$uname' ,emal='$eml',mob='$mob' , addr='$addr', dob=$dob where id='$id'";
 
 	if(mysqli_query($connection_details,$update_query)){
 		echo"1 record update succesfully";

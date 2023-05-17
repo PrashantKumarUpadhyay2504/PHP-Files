@@ -1,4 +1,4 @@
-<?php
+ <?php
 session_start();
 if(isset($_SESSION['uname'])){
      echo "<h1 align=right>Hello,".$_SESSION['uname']."</h2>";

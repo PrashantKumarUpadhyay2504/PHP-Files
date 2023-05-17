@@ -9,6 +9,7 @@ if(isset($_SESSION['uname'])){
     echo "<a href=product.php>Click here for products</a>";
     echo "<br><a href=Contact.php>Click here for Contact</a>";
     echo "<br><a href=about.php>Click here for About Us</a>";
+echo "<br><button><a href=logout.php style='text-decoration:none'>Logout</a></button>";
 }
 else{
      if($username == $_POST['uname'] && $password == $_POST['upass']){
